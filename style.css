@@ -1,0 +1,341 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e2c4f, #1b4b7e, #5374a7 ,#9d74a0);
+  overflow: hidden;
+  flex-direction: column;
+  color: #1e2c4f;
+}
+
+/* Overlay Box */
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgb(157,116,160);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 1s ease;
+  z-index: 10;
+
+}
+
+#overlay.fade {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#overlay-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  text-align: center;
+  color: #1e2c4f;
+}
+
+.btn {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.yes {
+  background: #6ac5e0;
+  color: #1e2c4f;
+}
+.yes:hover { background: #5374a7; color: white; }
+
+.no {
+  background: #9d74a0;
+  color: #fff;
+}
+.no:hover { background: #1b4b7e; }
+
+/* Main Page */
+#main {
+  color: #1e2c4f;
+  display: none;
+  height: 150px;
+  width: 1000px;
+  border: 5px black solid;
+  background:  #ffff;
+  position: absolute;
+  top: 70px;
+  left:40px ;
+  animation: fadeIn 2s forwards;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 20px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Envelopes */
+.envelopes {
+  position: relative;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.envelope {
+  background: #5374a7;
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+.envelope:hover {
+  transform: scale(1.1);
+}
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 35px solid #6ac5e0;
+}
+
+/* Modal (letter popup) */
+#letterModal {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(30,44,79,0.85);
+}
+
+.letter-content {
+  background: #ffffff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 50%;
+  max-width: 4000px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.5s ease-in;
+  color: #1e2c4f;
+  top: -100px;
+  
+}
+
+#closeModal {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #9d74a0;
+}
+#closeModal:hover {
+  color: #1b4b7e;
+}
+
+/* your old styles here... like box, buttons, fade animation etc. */
+
+/* --- Envelopes Section --- */
+.envelopes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.envelope {
+  font-size: 60px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+  transform: scale(1.2);
+}
+
+/* Individual envelope colors / positions */
+#envelope1 {
+  color: #9d74a0;
+  position: relative;
+  top: 130px;
+  right: 75px;
+
+}
+
+#envelope2 {
+
+  color: #6ac5e0;
+  position: relative;
+  top: 220px;
+  right: 177px;
+  
+}
+
+#envelope3 {
+  color: #5374a7;
+  position: relative;
+  top: 310px;
+  right: 280px;
+}
+
+#enback{
+  height: 370px;
+  width: 330px;
+  border: 5px white solid;
+  background-color: white;
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  animation: fadeIn 2s forwards;
+  padding-left: 10px;
+  border: 5px black solid;
+  
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#wordback{
+  color: black;
+  height: 400px;
+  width: 250px;
+  border: 5px black solid;
+  background-color: white;
+  position: absolute;
+  top: 300px;
+  left: 500px;
+  border-radius: 15px;
+  animation: fadeIn 2s forwards;
+  padding-left: 15px;
+}
+.polaroid {
+  width: 250px;
+  background: white;
+  padding: 10px 10px 20px 10px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  margin: 20px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  border: 1px solid #ccc;
+  position: absolute;
+  right:  40px;
+  top: 40px;
+}
+
+.polaroid img {
+  width: 100%;
+  display: block;
+  border-bottom: 5px solid #fff;
+}
+
+.caption {
+  text-align: center;
+  font-size: 14px;
+  color: #1e2c4f;
+  margin-top: 8px;
+}
+
+#hmain{
+  text-align: center;
+  text-decoration: double;
+
+}
+#h11{
+  position: relative;
+  top: 50px;
+  text-decoration: dashed;
+}
+#h22{
+  position: relative;
+  top: 90px;
+  text-decoration: dashed;
+}
+#h33{
+  position: relative;
+  top: 130px;
+  font-size: medium;
+}
+
+#img1{
+  height: 345px;
+  width: 225px;
+  position: relative;
+  display: inline-block ;  
+  background-color: white;
+  left: 200px;
+  top: 200px;
+  background-image: url(/img1bhai.png);
+  background-size: contain;
+  border: 5px white solid;
+
+}
+#img2{
+  height: 50px;
+  width: 230px;
+  background-color: white;
+  display: inline-block;
+  position: relative;
+  left: 200px;
+  top: -240px;
+   animation: fadeIn 0.5s ease-in;
+   text-align: center;
+   padding-bottom: 20px;
+   border: 4px black solid;
+}
+
+#cat{
+  height: 300px;
+  width: 250px;
+  display: inline-block;
+  position: absolute;
+  background-color: none;
+  right: 100px;
+  top: 420px;
+  background-image: url(/cat-jumping.gif);
+  background-size: 140%;
+}
+
+#bday{
+  height: 200px;
+  width: 400px;
+  display: inline-block;
+  position: absolute;
+  background-color : none;
+  left: 20px;
+  top: 10px;
+  background-image: url(/3584f90f012b5d7d0ee89459a102390.jpg);
+  background-size: 100%;
+  padding-top: 70px;
+  ;
+}
+
+#img3{
+  height: 300px;
+  width: 300px;
+  display: inline-block;
+  position: absolute;
+  background-color: none;
+  right: -0px;
+  bottom: -30px;
+  background-image: url(/stich.png);
+  background-size: contain;
+  
+}
