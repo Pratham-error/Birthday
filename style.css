@@ -309,7 +309,7 @@ body {
   background-color: none;
   right: 100px;
   top: 420px;
-  background-image: url(/cat-jumping.gif);
+  background-image: url(//Pratham-error/cat-jumping.gif);
   background-size: 140%;
 }
 
@@ -335,7 +335,8 @@ body {
   background-color: none;
   right: -0px;
   bottom: -30px;
-  background-image: url(/stich.png);
+  background-image: url(/Pratham-error/stich.png);
   background-size: contain;
   
+
 }
